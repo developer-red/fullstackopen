@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    server-->>browser: message: Note Created
+    deactivate server
+    Note right of browser: Application updates state locally and redraws  so JSON is not sent, server is updated with <br /> new JSON and saves state on server side
+ 
